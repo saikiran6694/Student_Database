@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}{% endblock %}</title>
+      {% load static %}
+
+    <!-- Bootstrap core CSS-->
+    <link href="{% static '/info/bootstrap/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="{% static '/info/bootstrap/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="{% static '/info/bootstrap/vendor/datatables/dataTables.bootstrap4.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static '/info/bootstrap/css/sb-admin.css' %}" rel="stylesheet">
+
+    <style>
+      .headimg{
+        margin-right: 20px;
+        margin-left: 30px;
+      }
+
+      body{
+        background:url("{% static 'info/images/bg.jpeg'%}");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .txt {
+        font-size: 25px;
+        font-weight:bold;
+        margin: 5px;
+        color: rgb(37, 30, 30);
+      }
+
+      .about{
+            font-weight: bold;
+            font-size: 30px;
+            color: #f57f26;
+        }
+        .container {
+            width: 71%;
+            margin: 50px auto;
+            padding: 5px;
+        }
+
+        .message{
+          margin-top: 20px;
+        }
+
+        .container .box {
+            width: 100%;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.699);
+            margin-top: 50px;
+            letter-spacing: 0.1em;
+            line-height: 1.6;
+            text-align: center;
+            text-justify: inter-word;
+            border-radius: 10px;
+            box-shadow: 0 0 10px -3px rgba(0, 0, 0, .1);
+        }
+      
+        .b1 {
+            border-radius: 20px;
+            border: 1px solid #f57f26;
+            background-color: #f57f26;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+        }
+
+        .b1:active {
+            transform: scale(0.95);
+        }
+        
+        .b1:focus {
+            outline: none;
+        }
+        
+        .b1.ghost {
+            padding-top: 10px;
+            background-color: transparent;
+            border-color: #FFFFFF;
+        }
+
+        .b1:hover{
+          text-decoration: none;
+        }
+        
+
+    </style>
+
+    <!-- Latest compiled and minified CSS -->
+
+
+      {% block css %}
+      {% endblock %}
+
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+      <img class="headimg" src="{% static 'info/images/logopng.png'%}" alt="Logo" style="height:30px;">
+      <a class="navbar-brand mr-1" href="{% url 'index' %}">REVA ERP</a>
+
+      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+        <i class="fas fa-bars"></i>
+      </button>
+
+
+    </nav>
+
+    <div id="wrapper">
+
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+          <div class="message">
+            <div class="text-center h3">
+                You have been logged out!
+                <br><br>
+                <a class="b1" href="/accounts/login">Login?</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="box">
+              <p class="about">Team Insights</p>
+              
+                <br /> 
+                <p class="txt">Vighnesh</p>
+                <br />
+                <p class="txt">Saikiran</p>
+
+                <br /> 
+                <p class="txt">Divya</p>
+                <br /> 
+                <p class="txt">Abhiram</p>
+                <br /> 
+          </div>
+        </div>
+       
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static '/info/bootstrap/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static '/info/bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static '/info/bootstrap/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static '/info/bootstrap/js/sb-admin.min.js' %}"></script>
+
+   {% block scripts %}
+    {% endblock %}
+  </body>
+
+</html>

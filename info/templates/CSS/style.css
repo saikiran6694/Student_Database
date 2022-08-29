@@ -1,0 +1,113 @@
+.b1{
+    background-color: #f580266e;
+    color:rgb(26, 126, 207);
+    font-family: sans-serif;
+    text-align: center;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+}
+
+.a1{
+    padding-left: 10px;
+    font-size: 12px;
+    font-family: sans-serif;
+    color: rgb(26, 126, 207);
+}
+.b1:hover{
+    cursor: pointer;
+    background-color: cornsilk;
+    color: rgba(0, 0, 139, 0.603);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    text-align: center;
+    background-color:rgba(255, 255, 255, 0.700);
+    padding: 15px;
+}
+
+header h1 {
+    padding-top: 5px;
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+    color:#f57f26;
+    padding-bottom: 10px;
+}
+  
+marquee { 
+    width:80% 
+}
+
+header img{
+    padding-left: 5px;
+    float: left;
+}
+
+body{
+    background-image: url("{% static 'Images/abc.jpeg'%}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family:sans-serif;
+    background-color: #f1f1f1;
+    position: relative;
+    padding-bottom: 58px;
+    min-height: 100vh;
+}
+
+.adminblock{
+    border-radius: 10px;
+}
+.about{
+    font-weight: bold;
+    font-size: large;
+    color: #f57f26;
+}
+.container {
+    width: 71%;
+    margin: 50px auto;
+    padding: 5px;
+}
+
+.container .box {
+    width: 100%;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.699);
+    margin-top: 50px;
+    letter-spacing: 0.1em;
+    line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-word;
+    border-radius: 10px;
+    box-shadow: 0 0 10px -3px rgba(0, 0, 0, .1);
+}
+
+footer{
+    text-align: center;
+    color: #d1d3c8;
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    line-height: 1.6;
+    padding: 1rem;
+    background-color: #4a4d56;
+}
+
+footer img{
+    padding-top: 10px ;
+    
+}
+
+footer p{
+    padding-right: 5px;
+    text-align:right;
+}

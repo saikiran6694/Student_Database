@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>homepage</title>
+      {% load static %}
+
+    <!-- Bootstrap core CSS -->
+      <link href="{% static '/info/homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+      <link href="{% static '/info/homepage/css/heroic-features.css' %}" rel="stylesheet">
+          <link href="{% static '/info/bootstrap/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+          <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        img {
+          width: 200px;
+           object-fit: contain;
+        }
+
+        h4{
+          font-weight: 500;        }
+        .card {
+          display: grid;
+          grid-template-columns: 300px;
+          grid-template-rows: 210px 210px 80px;
+          grid-template-areas: "image" "text" "stats";
+
+          border-radius: 10px;
+          background: white;
+          box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+          font-family: roboto;
+          text-align: center;
+          
+
+          transition: 0.5s ease;
+          cursor: pointer;
+          margin:30px;
+        }
+        .card-image {
+          grid-area: image;
+          background: url("img1.jpg");
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          background-size: cover;
+        }
+
+        .card-image img{
+          padding: 10px;
+          padding-top: 20px;
+        }
+
+        .card-text {
+          grid-area: text;
+          margin: 25px;
+        }
+
+        .card-text p {
+          color: grey;
+          font-size:15px;
+          font-weight: 300;
+        }
+        .card-text h2 {
+          margin-top:0px;
+          font-size:28px;
+        }
+        .card-stats {
+          grid-area: stats; 
+          border-bottom-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+          background: rgb(255, 7, 110);
+        }
+        .card-stats .stat {
+          padding:10px;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          color: white;
+        }
+
+        .card:hover {
+          transform: scale(1.15);
+          box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+        }
+
+        .stat a{
+            background-color: #f58026b8;
+            color:rgb(12, 93, 159);
+            font-family: sans-serif;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: none;
+        }
+        .stat a:hover{
+            cursor: pointer;
+            background-color: rgb(243, 235, 206);
+            text-decoration: none;
+            color: rgba(0, 0, 139, 0.603);
+        }
+
+        footer{
+            text-align: center;
+            color: #d1d3c8;
+            margin-top: 50px;
+            padding: 20px;
+            width: 100%;
+            position: absolute;
+            line-height: 1.6;
+            background-color: #4a4d56;
+        }
+
+        footer img{
+            padding-top: 10px ;
+        }
+
+        footer p{
+            padding-right: 5px;
+            text-align:right;
+        }
+   
+       </style>
+
+  </head>
+
+  <body>
+
+     <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <img src="{% static 'info/images/logopng.png'%}" alt="Logo" style="height:30px;">
+          <a class="navbar-brand" href="{% url 'index' %}">REVA ERP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-capitalize">{{ request.user.student.name }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Jumbotron Header -->
+      <header class="jumbotron my-4">
+        <img src="{% static 'info/images/reva.png'%}" alt="Logo" style="width:12%;">
+        <marquee onmouseover="stop()" onmouseout="start()"><h1><b> Welcome to REVA University</b></h1></marquee>
+        <h4 >Greetings! {{ request.user.teacher.name }}</h4>
+{#        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>#}
+{#        <a href="#" class="b1 btn-lg">Call to action!</a>#}
+      </header>
+
+      <!-- Page Features -->
+      <div class="row text-center">
+
+          <div class="card">
+            <div class="card-image">
+              <a href="{% url 't_clas' request.user.teacher.id 1 %}">
+                <img  src="{% static 'info/images/attendance.png' %}" alt="">
+              </a>
+            </div>
+
+            <div class="card-text">
+              <h2 >Attendance</h2>
+              <p >Enter the attendance of the students based on the class they are in. There is also
+                  the provision to edit the attendance of a whole class or student individually.</p>
+            </div>
+
+            <div class="stat">
+              <a class="btn btn-primary" role="button" href="{% url 't_clas' request.user.teacher.id 1 %}"> Enter Attendance</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image">
+              <a href="{% url 't_clas' request.user.teacher.id 2 %}">
+                <img  src="{% static 'info/images/marks.png' %}" alt="">
+              </a>
+            </div>
+
+            <div class="card-text">
+              <h2>Marks</h2>
+              <p >Enter the marks of the students based on the class they are in. This includes
+                    Internals, events and SEE. The marks of the students can also be edited.</p>
+            </div>
+
+            <div class="stat">
+                <a class="btn btn-primary" role="button" href="{% url 't_clas' request.user.teacher.id 2 %}">Enter Marks</a>
+            </div>
+
+          </div>
+
+          <div class="card">
+            <div class="card-image">
+              <a href="{% url 't_timetable' request.user.teacher.id %}">
+                <img src="{% static 'info/images/schedule.png' %}" alt="">
+              </a>
+            </div>
+
+            <div class="card-text">
+              <h2>TimeTable</h2>
+              <p>View the timetable in a tabular form. For a particular class, it specifies a
+                  list of teachers who handle the same class that are free for that time slot.</p>
+            </div>
+
+            <div class="stat">
+                <a class="btn btn-primary" role="button" href="{% url 't_timetable' request.user.teacher.id %}">View TimeTable</a>
+            </div>
+
+          </div>
+
+          <div class="card">
+            <div class="card-image">
+            <a href="{% url 't_clas' request.user.teacher.id 3 %}">
+                <img  src="{% static 'info/images/report.png' %}" alt="">
+            </a>
+          </div>
+
+          <div class="card-text">
+            <h2>Reports</h2>
+              <p class="card-text">Generate reports for each class. Reports include a table consisting
+                    of the students belonging to that class and their Attendance.</p>
+          </div>
+
+          <div class="stat">
+            <a href="{% url 't_clas' request.user.teacher.id 3 %}" class="btn btn-primary">Generate Reports</a>
+            </div>
+
+          </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+
+
+    <footer>
+      <center><img class= "img2" src="{% static '/info/images/footer.png'%}" alt="footer" style="width:12%;"></center>
+      <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script>, project by <strong>Team Insights</strong></p>
+    </footer>
+    
+    <!-- /.container -->
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="/accounts/logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+
+
+      <script src="{% static '/info/homepage/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static '/info/homepage/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  </body>
+
+</html>

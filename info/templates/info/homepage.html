@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>REVA University | ERP</title>
+    <link rel="icon" href="/info/images/revapng.png">
+
+      {% load static %}
+
+    <!-- Bootstrap core CSS -->
+      <link href="{% static '/info/homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@300&display=swap" rel="stylesheet">
+      <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;  
+        }
+
+
+        img {
+          width: 200px;
+           object-fit: contain;
+        }
+
+        .main-header{
+          background-color: #0096a1;
+          max-height: 200px;
+          padding: 20pt;
+          margin: 15px;
+          border-radius: 5px;
+        }
+
+        header img{
+          margin-top: 20px;
+            padding-left: 5px;
+            float: left;
+        }
+        
+        header h4{
+          position: ;
+        }
+        .btn1 {
+            border-radius: 20px;
+            border: 1px solid #f57f26;
+            background-color: #f57f26;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+        }
+
+        .btn1:active {
+            transform: scale(0.95);
+        }
+        
+        .btn1:focus {
+            outline: none;
+        }
+        
+        .btn1.ghost {
+            padding-top: 10px;
+            background-color: transparent;
+            border-color: #FFFFFF;
+        }
+        .btn1:hover{
+          text-decoration: none;
+        }
+
+        .modal-footer a{
+          background-color: grey;
+        }
+        .card {
+          display: grid;
+          grid-template-columns: 300px;
+          grid-template-rows: 210px 210px 80px;
+          grid-template-areas: "image" "text" "stats";
+
+          border-radius: 10px;
+          background: white;
+          box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+          font-family: roboto;
+          text-align: center;
+
+          transition: 0.5s ease;
+          cursor: pointer;
+          margin:30px;
+        }
+        .card-image {
+          grid-area: image;
+          background: url("img1.jpg");
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          background-size: cover;
+        }
+
+        .card-image img{
+          padding: 10px;
+          padding-top: 20px;
+        }
+
+        .card-text {
+          grid-area: text;
+          margin: 25px;
+        }
+
+        .card-text p {
+          color: grey;
+          font-size:15px;
+          font-weight: 300;
+        }
+        .card-text h2 {
+          margin-top:0px;
+          font-size:28px;
+        }
+        .card-stats {
+          grid-area: stats; 
+          border-bottom-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+          background: rgb(255, 7, 110);
+        }
+        .card-stats .stat {
+          padding:10px;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          color: white;
+        }
+
+        .card:hover {
+          transform: scale(1.15);
+          box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+        }
+
+        .stat a:hover{
+            cursor: pointer;
+            background-color: rgb(243, 235, 206);
+            text-decoration: none;
+            color: rgba(0, 0, 139, 0.603);
+        }
+
+        footer{
+            text-align: center;
+            color: #d1d3c8;
+            margin-top: 50px;
+            padding: 20px;
+            width: 100%;
+            position: absolute;
+            line-height: 1.6;
+            background-color: #4a4d56;
+        }
+
+        footer img{
+            padding-top: 10px ;
+        }
+
+        footer p{
+            padding-right: 5px;
+            text-align:right;
+        }
+
+    </style>
+    <!-- Custom styles for this template -->
+      <link href="{% static '/info/homepage/css/heroic-features.css' %}" rel="stylesheet">
+          <link href="{% static '/info/bootstrap/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+
+
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <img src="{% static 'info/images/logopng.png'%}" alt="Logo" style="height:30px;">
+          <a class="navbar-brand" href="{% url 'index' %}">REVA ERP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-capitalize">{{ request.user.student.name }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+
+
+      <div class="main-header">
+      <!-- Jumbotron Header -->
+      <header class="">
+        <img src="{% static 'info/images/reva.png'%}" alt="Logo" style="width:12%;">
+        <marquee onmouseover="stop()" onmouseout="start()"><h1><b> Welcome to REVA University</b></h1></marquee>
+        <h4 >Greetings! {{ request.user.student.name }}</h4>
+{#        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>#}
+{#        <a href="#" class="b1 btn-lg">Call to action!</a>#}
+      </header>
+    </div>      
+
+      <!-- Page Features -->
+      <div class="row text-center">
+       
+        <div class="card">
+          <div class="card-image">
+            <a href="{% url 'attendance' request.user.student.USN %}">
+              <img src="{% static 'info/images/attendance.png' %}" alt="">
+            </a>
+          </div>
+          
+          <div class="card-text">
+            <h2 >Attendance</h2>
+            <p >View the attendance status for each of your courses. The attendance of each course is
+                also displayed as list of classes that were conducted.</p>
+          </div>
+          
+              <div class="stat">
+                  <a  role="button" href="{% url 'attendance' request.user.student.USN %}"> View Attendance</a>
+              </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-image">
+              <a href="{% url 'marks_list' request.user.student.USN %}">
+                <img src="{% static 'info/images/marks.png' %}" alt="">
+              </a>
+            </div>
+
+              <div class="card-text">
+              <h2>Marks</h2>
+              <p >View the marks obtained for each of your courses. These include the marks of 3
+                  internal assessment, 2 events and the Semester End Exam  </p>
+              </div>
+
+            <div class="stat">
+                <a  role="button" href="{% url 'marks_list' request.user.student.USN %}">View Marks</a>
+            </div>
+          
+        </div>
+
+        <div class="card">
+          <div class="card-image">
+              <a href="{% url 'timetable' request.user.student.class_id_id %}">
+                <img  src="{% static 'info/images/schedule.png' %}" alt="">
+              </a>
+            </div>
+
+              <div class="card-text">
+                <h2>TimeTable</h2>
+                <p>View the timetable in a tabular form. The timetable displays all the courses of the
+                    student and the time and day at which they are conducted.</p>
+              </div>
+            <div class="stat">
+                <a  role="button" href="{% url 'timetable' request.user.student.class_id_id %}">View TimeTable</a>
+            </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+
+    <footer>
+      <center><img class= "img2" src="{% static '/info/images/footer.png'%}" alt="footer" style="width:12%;"></center>
+      <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script>, project by <strong>Team Insights</strong></p>
+    </footer>
+
+
+    <!-- /.container -->
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sure?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn1" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn1" href="/accounts/logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+   
+    <!-- Bootstrap core JavaScript -->
+      <script src="{% static '/info/homepage/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static '/info/homepage/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    
+  </body>
+
+</html>
